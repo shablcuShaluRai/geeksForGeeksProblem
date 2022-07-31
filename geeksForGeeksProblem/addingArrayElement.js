@@ -26,7 +26,7 @@
 
 const getIsValidArray = (arr, k) => arr.every((ar) => k <= ar);
 
-function minOperations(arr, n, k) {
+function minOperations(arr, k) {
   let isValidArr = getIsValidArray(arr, k);
   let query = 0;
   while (!isValidArr) {
@@ -45,6 +45,5 @@ function minOperations(arr, n, k) {
   return query;
 }
 const arr = [1, 10, 12, 9, 2, 3];
-const n = 6,
-  k = 6;
-console.log("min operation", minOperations(arr, n, k));
+const k = 6;
+console.log("min operation", minOperations(arr, k));
