@@ -1,7 +1,7 @@
 {
-  "name": "geeksforgeeksproblem",
+  "name": "geeksforgeeksproblems",
   "version": "1.0.0",
-  "description": "Solved basic geeksForGeeks problem using JS",
+  "description": "solving geeksforgeeks problem by using js",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
@@ -19,5 +19,10 @@
   "resolutions": {
     "@babel/preset-env": "7.13.8"
   },
-  "keywords": ["geeksforgeeks", "es6", "basic", "array"]
+  "keywords": [
+    "string",
+    "geeksforgeeks",
+    "javascript",
+    "array"
+  ]
 }
