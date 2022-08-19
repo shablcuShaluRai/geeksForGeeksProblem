@@ -1,7 +1,7 @@
 {
   "name": "geeksforgeeksproblems",
   "version": "1.0.0",
-  "description": "solving geeksforgeeks & leetcode problem by using js",
+  "description": "solving geeksforgeeks problem by using js",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
@@ -19,5 +19,13 @@
   "resolutions": {
     "@babel/preset-env": "7.13.8"
   },
-  "keywords": ["geeksforgeeks", "javascript", " problem", "leetcode"]
+  "keywords": [
+    "geeksforgeeks",
+    "javascript",
+    " problem",
+    "leetcode",
+    "objects",
+    "datastructure",
+    "array"
+  ]
 }
