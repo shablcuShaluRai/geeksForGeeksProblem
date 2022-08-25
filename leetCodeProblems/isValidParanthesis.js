@@ -11,8 +11,8 @@ function isValid(str) {
   while (start <= last) {
     // "}" === "}"
     if (bracketObj[str[start]] === str[last]) {
-      last--; // 6 ,5, 4, 3
-      start++; //1, 2, 3, 4
+      last--; //7, 6 ,5, 4, 3
+      start++; //0, 1, 2, 3, 4
     } else {
       return false;
     }
