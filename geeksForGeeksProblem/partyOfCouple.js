@@ -11,11 +11,16 @@ function findSingle(n, arr) {
   const nonDuplicateArr = [];
   for (let i = 0; i < n; i++) {
     let elementIdx = nonDuplicateArr.indexOf(arr[i]);
-    if (!nonDuplicateArr.includes(arr[i])) {
-      nonDuplicateArr.push(arr[i]);
-    } else if (elementIdx > -1) {
+    if (elementIdx > -1) {
       nonDuplicateArr.splice(elementIdx, 1);
+    } else {
+      nonDuplicateArr.push(arr[i]);
     }
+    // if (!nonDuplicateArr.includes(arr[i])) {
+    //   nonDuplicateArr.push(arr[i]);
+    // } else if (elementIdx > -1) {
+    //   nonDuplicateArr.splice(elementIdx, 1);
+    // }
   }
   return nonDuplicateArr[0];
 }
