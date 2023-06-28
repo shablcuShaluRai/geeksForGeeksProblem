@@ -60,7 +60,7 @@ function memoize(fn) {
   let cache = {};
   return function (...args) {
     let key = JSON.stringify(args);
-    if (cache[key]) {
+    if (key in cache) {
       console.log("memoize data");
       return cache[key];
     }
