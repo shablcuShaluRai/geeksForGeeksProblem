@@ -17,17 +17,31 @@
 //   return arr;
 // }
 
+// time complexity : o(n2)
 // another way to write the bubble sort
-function bubbleSort(arr) {
-  let temp;
-  for (let i = 0; i < arr.length; ++i) {
-    for (let j = 0; j < arr.length - 1 - i; ++j) {
-      if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-      }
+// function bubbleSort(arr) {
+//   let temp;
+//   for (let i = 0; i < arr.length; ++i) {
+//     for (let j = 0; j < arr.length - 1 - i; ++j) {
+//       if (arr[j] > arr[j + 1]) {
+//         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+function bubbleSort(array) {
+  let swap = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > array[i + 1]) {
+      [array[i + 1], array[i]] = [array[i], array[i + 1]];
+      swap++;
     }
+    console.log("arr", swap, array);
   }
-  return arr;
+
+  return swap === 0 ? array : bubbleSort(array);
 }
 
 module.exports = bubbleSort;
