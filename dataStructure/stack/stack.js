@@ -40,6 +40,19 @@ class Stack {
     this.count = 0;
     return [];
   }
+
+  // return all elements of stack with comma separated
+
+  toStrings() {
+    if (this.isEmpty()) {
+      return "";
+    }
+    let str = `${this.items[0]}`;
+    for (let i = 1; i < this.count; i++) {
+      str = `${str}, ${this.items[i]}`;
+    }
+    return str;
+  }
 }
 
 const stack = new Stack();
@@ -48,10 +61,10 @@ console.log("stack clear", stack.clear());
 stack.push(20);
 stack.push(90);
 console.log("stack push", stack.push(30));
-
+console.log("stack pop", stack.pop());
+stack.push(1000);
 console.log("stack", stack);
 
-console.log("stack pop", stack.pop());
-
 console.log("peek", stack.peek());
-console.log("peek", stack.isEmpty());
+console.log("isEmpty", stack.isEmpty());
+console.log("stack toStrings", stack.toStrings());
