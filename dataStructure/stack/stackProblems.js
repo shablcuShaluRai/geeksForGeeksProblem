@@ -42,3 +42,27 @@ function getConversion(decVal, base) {
 
 console.log("binary", getConversion(10, 2));
 console.log("octal", getConversion(10, 8));
+
+// you can solve this problem without stack also. you just need to minor change
+
+function convertToAnyBase(dec, base) {
+  let num = dec,
+    baseStr = "",
+    remStack = [],
+    rem;
+  let digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  if (!(base >= 2 && base <= 36)) return "";
+  while (num > 0) {
+    rem = Math.floor(num % base);
+    remStack.push(rem);
+    num = Math.floor(num / base);
+  }
+
+  while (remStack.length > 0) {
+    baseStr += digits[remStack.pop()];
+  }
+  return baseStr;
+}
+
+console.log("binary", convertToAnyBase(10, 2));
+console.log("octal", convertToAnyBase(10, 8));
