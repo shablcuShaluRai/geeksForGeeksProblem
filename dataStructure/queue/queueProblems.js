@@ -3,49 +3,49 @@
 // game, the hot potato stops being passed around the circle of children, and the child that
 //  has the hot potato is removed from the circle. This action is repeated until there is only
 //  one child left (the winner).
-// const Queue = require("./queue");
-// function hotPotato(elementList, num) {
-//   const queue = new Queue();
-//   const eliminatedList = [];
-//   const result = {
-//     eliminated: [],
-//     winner: ""
-//   };
-//   for (let i = 0; i < elementList.length; i++) {
-//     queue.enqueue(elementList[i]);
-//   }
+const Queue = require("./queue");
+function hotPotato(elementList, num) {
+  const queue = new Queue();
+  const eliminatedList = [];
+  const result = {
+    eliminated: [],
+    winner: ""
+  };
+  for (let i = 0; i < elementList.length; i++) {
+    queue.enqueue(elementList[i]);
+  }
 
-//   console.log("queue", queue);
-//   while (queue.size() > 1) {
-//     for (let i = 0; i < num; i++) {
-//       queue.enqueue(queue.dequeue());
-//       console.log("queue", i, queue);
-//     }
-//     eliminatedList.push(queue.dequeue());
-//   }
-//   return {
-//     ...result,
-//     eliminated: eliminatedList,
-//     winner: queue.dequeue()
-//   };
-// }
+  console.log("queue", queue);
+  while (queue.size() > 1) {
+    for (let i = 0; i < num; i++) {
+      queue.enqueue(queue.dequeue());
+      console.log("queue", i, queue);
+    }
+    eliminatedList.push(queue.dequeue());
+  }
+  return {
+    ...result,
+    eliminated: eliminatedList,
+    winner: queue.dequeue()
+  };
+}
 
 // without using queue
 
-function hotPotato(elementList, num) {
-  const eliminatedList = [],
-    queueList = [...elementList];
-  while (queueList.length > 1) {
-    for (let i = 0; i < num; i++) {
-      queueList.push(queueList.shift());
-    }
-    eliminatedList.push(queueList.shift());
-  }
-  return {
-    eliminated: eliminatedList,
-    winner: queueList.shift()
-  };
-}
+// function hotPotato(elementList, num) {
+//   const eliminatedList = [],
+//     queueList = [...elementList];
+//   while (queueList.length > 1) {
+//     for (let i = 0; i < num; i++) {
+//       queueList.push(queueList.shift());
+//     }
+//     eliminatedList.push(queueList.shift());
+//   }
+//   return {
+//     eliminated: eliminatedList,
+//     winner: queueList.shift()
+//   };
+// }
 
 const names = ["John", "Jack", "Camila", "Ingrid", "Carl"];
 const result = hotPotato(names, 7);
