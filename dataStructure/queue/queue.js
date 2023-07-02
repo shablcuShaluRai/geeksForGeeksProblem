@@ -39,7 +39,7 @@ class Queue {
   //size or length: returns number of elements in the queue
 
   size() {
-    if (this.isEmpty()) return [];
+    if (this.isEmpty()) return 0;
     return this.count - this.lowestCount;
   }
 
@@ -58,6 +58,8 @@ class Queue {
     return str;
   }
 }
+
+module.exports = Queue;
 
 const queue = new Queue();
 console.log("queue is empty", queue.isEmpty());
