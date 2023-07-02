@@ -73,4 +73,4 @@ console.log("queue", queue);
 console.log("queue is empty", queue.isEmpty());
 console.log("queue", queue.peek());
 console.log("queue", queue.size());
-console.log("queue toStrign", queue.toStrings());
+console.log("queue toString", queue.toStrings());
