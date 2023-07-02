@@ -48,6 +48,15 @@ class Queue {
     this.count = 0;
     this.lowestCount = 0;
   }
+
+  toStrings() {
+    if (this.isEmpty()) return "";
+    let str = this.items[this.lowestCount];
+    for (let i = this.lowestCount + 1; i < this.count; i++) {
+      str = `${str}, ${this.items[i]}`;
+    }
+    return str;
+  }
 }
 
 const queue = new Queue();
@@ -55,7 +64,7 @@ console.log("queue is empty", queue.isEmpty());
 queue.enqueue(20);
 queue.enqueue(30);
 queue.enqueue(60);
-queue.clear();
+// queue.clear();
 queue.enqueue(80);
 queue.enqueue(50);
 console.log("dequeue", queue.dequeue());
@@ -64,3 +73,4 @@ console.log("queue", queue);
 console.log("queue is empty", queue.isEmpty());
 console.log("queue", queue.peek());
 console.log("queue", queue.size());
+console.log("queue toStrign", queue.toStrings());
