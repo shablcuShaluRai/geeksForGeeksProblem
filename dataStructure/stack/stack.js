@@ -55,6 +55,7 @@ class Stack {
   }
 }
 
+module.exports = Stack;
 const stack = new Stack();
 stack.push(10);
 console.log("stack clear", stack.clear());
