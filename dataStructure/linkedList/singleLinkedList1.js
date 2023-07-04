@@ -1,3 +1,4 @@
+const Node = require("./node");
 class SingleLinkedList {
   constructor() {
     this.head = null;
@@ -8,11 +9,11 @@ class SingleLinkedList {
   enqueue(item) {
     this.length++;
     if (!this.tail) {
-      this.tail = this.head = item;
+      this.tail = this.head = new Node(item);
       return;
     }
-    this.tail.next = item;
-    this.tail = item;
+    this.tail.next = new Node(item);
+    this.tail = new Node(item);
   }
 
   dequeue() {
@@ -32,5 +33,8 @@ class SingleLinkedList {
 const data = new SingleLinkedList();
 data.enqueue(20);
 data.enqueue(30);
-// data.enqueue(40);
+data.enqueue(40);
+data.enqueue(60);
+data.enqueue(50);
+data.dequeue(40);
 console.log("data", data);
