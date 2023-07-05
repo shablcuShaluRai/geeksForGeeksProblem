@@ -16,17 +16,20 @@
 
 function findTheDifference(s, t) {
   let obj = {};
-  for (let i = 0; i < t.length; i++) {
-    obj[t[i]] = (obj[t[i]] || 0) + 1;
-  }
   for (let i = 0; i < s.length; i++) {
-    if (obj[s[i]]) {
-      delete obj[s[i]];
+    obj[s[i]] = (obj[s[i]] || 0) + 1;
+  }
+  for (let i = 0; i < t.length; i++) {
+    if (obj[t[i]] !== undefined && obj[t[i]] > 0) {
+      obj[t[i]]--;
+    } else {
+      return t[i];
     }
   }
-  return Object.keys(obj)?.[0];
 }
 
 console.log("findTheDifference 1", findTheDifference("abcd", "abcde"));
 
 console.log("findTheDifference 1", findTheDifference("", "y"));
+
+console.log("findTheDifference 1", findTheDifference("a", "aa"));
